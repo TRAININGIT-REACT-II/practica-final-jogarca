@@ -1,10 +1,11 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { resolve } = require("path");
+const { DefinePlugin } = require("webpack");
 
 /**
  * Configuración para compilar el cliente de la práctica final
  */
-module.exports = {
+const config = {
   // Para simplificar, asignamos el contexto a la carpeta actual
   context: resolve(__dirname),
   // Punto de entrada de la aplicación
@@ -44,6 +45,9 @@ module.exports = {
       favicon: "./static/favicon.ico",
       filename: "index.html",
     }),
+    new DefinePlugin({
+      BASIC_URL_API: JSON.stringify("http://localhost:8080/"),
+    }),
   ],
   // Por ahora, incluimos siempre los source maps para que las herramientas
   // de desarrollo del navegador muestren el codigo fuente
@@ -64,4 +68,12 @@ module.exports = {
       "/api": "http://localhost:3000",
     },
   },
+};
+
+module.exports = (_env, argv) => {
+  if (argv.mode === "production") {
+    config.devtool = "source-map";
+  }
+
+  return config;
 };

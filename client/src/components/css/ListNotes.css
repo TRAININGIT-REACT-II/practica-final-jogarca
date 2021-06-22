@@ -1,0 +1,15 @@
+.listnotesbutton {
+  --mini-t-button-color: var(--mini-color-primary);
+  --mini-t-button-shadow: var(--mini-color-text);
+  background-color: var(--mini-t-button-color);
+  border: var(--mini-border-size) solid var(--mini-t-button-color);
+  border-radius: var(--mini-border-radius);
+  cursor: pointer;
+  font-size: 0.75em;
+  position: relative;
+  padding: 0.1rem 0.75rem;
+}
+
+.listnotes {
+  padding: 0.5rem;
+}

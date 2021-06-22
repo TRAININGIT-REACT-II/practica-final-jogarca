@@ -1,0 +1,7 @@
+nav.secondary a {
+  text-decoration: none;
+  padding: 0.5rem;
+  border: var(--mini-border-size) solid var(--mini-color-secondary);
+  border-radius: var(--mini-border-radius);
+  color: var(--mini-color-text);
+}

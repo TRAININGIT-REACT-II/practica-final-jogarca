@@ -1,0 +1,9 @@
+input {
+  margin-bottom: 1rem;
+}
+
+pre {
+  padding: 1rem;
+  background-color: var(--mini-color-element-background);
+  font-size: 1.25em;
+}
